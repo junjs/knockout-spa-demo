@@ -12,10 +12,9 @@ define(['knockout', 'axios'], function (ko, axios) {
 
     api.setLoader = function (loader) {
         this.loader = loader;
-        if (loader === null) {
-            launchStack();
-        }
     }
+
+    api.launchSta
 
     function launchStack() {
         promiseArray.push(new Promise(function(resolve) {
@@ -32,6 +31,8 @@ define(['knockout', 'axios'], function (ko, axios) {
                 return saveWorker(region);
             });
         }, Promise.resolve());
+
+        promise all and resolve loader
 
     }
 
