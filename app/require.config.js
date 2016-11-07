@@ -6,7 +6,9 @@
         "crossroads": "lib/crossroads",
         "signals": "lib/signals",
         "hasher": "lib/hasher",
-        "text": "lib/text"
+        "text": "lib/text",
+        "grapnel": "lib/grapnel",
+        "axios": 'lib/axios'
     },
     shim: {
     }

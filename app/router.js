@@ -31,6 +31,10 @@ define(["knockout", "crossroads", "hasher"], function (ko, crossroads, hasher) {
             });
         });
         crossroads.routed.add(console.log, console);
+        crossroads.routed.add(function(request, data){
+            console.log(request);
+            console.log(data.route +' - '+ data.params +' - '+ data.isFirst);
+        });
         activateCrossroads();
     }
 

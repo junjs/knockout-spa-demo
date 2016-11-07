@@ -13,10 +13,14 @@
     "gulp": "^3.9.1"
   },
   "dependencies": {
-    "knockout": "^3.4.0",
-    "requirejs": "^2.3.2",
-    "requirejs-text": "^2.0.12",
+    "axios": "^0.15.2",
     "crossroads": "^0.12.2",
-    "hasher": "^1.2.0"
+    "grapnel": "^0.6.4",
+    "hasher": "^1.2.0",
+    "jquery": "^3.1.1",
+    "knockout": "^3.4.0",
+    "request": "^2.78.0",
+    "requirejs": "^2.3.2",
+    "requirejs-text": "^2.0.12"
   }
 }

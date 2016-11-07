@@ -30,7 +30,13 @@
             </div>
         </div>
     </div>
-    <div id="page1" class="container" style="padding-top:50px" data-bind="component: { name: route().page, params: route }"></div>
+    <!--<div id="page1" class="container" style="padding-top:50px" data-bind="component: { name: route().page, params: route }"></div>-->
+
+    <div class="view-container" data-bind="component: { 
+        name: controller.viewName, 
+        params: controller.viewParams }, 
+    css: {'is-transitioning': controller.isTransitioning}"></div>
+    <p data-bind="text: controller.isTransitioning"></p>
 </body>
 
 </html>
