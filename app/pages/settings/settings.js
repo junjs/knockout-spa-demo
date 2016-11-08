@@ -1,8 +1,4 @@
-define(["knockout", "text!./settings.html"], function (ko, settingsTemplate) {
-    function settingsViewModel(params) {
-        var self = this;
+define(["knockout", 'pages/settings/settingsViewModel', "text!./settings.html"], function (ko, settingsViewModel, settingsTemplate) {
 
-        return self;
-    }
     return { viewModel: settingsViewModel, template: settingsTemplate, path: '/' };
 });
