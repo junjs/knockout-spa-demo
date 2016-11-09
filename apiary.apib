@@ -5,6 +5,91 @@ HOST: http://polls.apiblueprint.org/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
+## Topics [/topics]
+
+### List All Topics [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "TPC-000001",
+                "description": "topic 1",
+                "creator": "Juanjo",
+                "date": "20/11/2006",
+                "status": "answered"
+            },
+            {
+                "id": "TPC-000002",
+                "description": "topic 2",
+                "creator": "Pepe",
+                "date": "20/09/2006",
+                "status": "pending"
+            },
+            {
+                "id": "TPC-000003",
+                "description": "topic 3",
+                "creator": "Natalia",
+                "date": "20/12/2006",
+                "status": "open"
+            },
+            {
+                "id": "TPC-000004",
+                "description": "topic 4",
+                "creator": "Juanjo",
+                "date": "20/03/2006",
+                "status": "answered"
+            }
+            
+        ]
+        
+        
+## Topic [/topic]
+        
+### Get a Topic [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": "TPC-000001",
+            "description": "topic 1",
+            "creator": "Juanjo",
+            "date": "20/11/2006",
+            "status": "answered",
+            "questions": [
+                {
+                    "id": "QUEST-000001",
+                    "description": "question 1",
+                    "creator": "Juanjo",
+                    "date": "20/11/2006",
+                    "status": "answered"
+                },
+                {
+                    "id": "QUEST-000002",
+                    "description": "question 2",
+                    "creator": "Pepe",
+                    "date": "20/09/2006",
+                    "status": "pending"
+                },
+                {
+                    "id": "QUEST-000003",
+                    "description": "question 3",
+                    "creator": "Natalia",
+                    "date": "20/12/2006",
+                    "status": "open"
+                },
+                {
+                    "id": "QUEST-000004",
+                    "description": "question 4",
+                    "creator": "Juanjo",
+                    "date": "20/03/2006",
+                    "status": "answered"
+                }
+                
+            ]
+           
+        }
+
 ## Questions Collection [/questions]
 
 ### List All Questions [GET]
@@ -30,8 +115,6 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                         "votes": 256
                     }
                 ]
-            }, {
-                "question": "question 2"
             }
         ]
 
