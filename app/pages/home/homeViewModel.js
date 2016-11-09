@@ -9,6 +9,10 @@ define(["knockout", 'repositories/listApi'], function (ko, listApi) {
             listApi.getList("hola").then(onGetList);
         }
 
+        self.dispose = function() {
+            console.log('disposed');
+        }
+
         function onGetList(result) {
             console.log('callback result' + result);
            
@@ -17,7 +21,7 @@ define(["knockout", 'repositories/listApi'], function (ko, listApi) {
             }, this);
         }
 
-        self.init();
+        console.log('finish init homeViewModel');
 
         return self;
     }

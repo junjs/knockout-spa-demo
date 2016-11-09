@@ -1,34 +1,34 @@
-define(["knockout", "grapnel", "api"], function (ko, Grapnel, api) {
+define(["knockout", "grapnel", "shared/api"], function (ko, Grapnel, api) {
     return function KnockoutController(config) {
         var defaults = {transitionDelayMs: 0, views: []};
         var settings = ko.utils.extend(defaults, config || {});
         var router = new Grapnel();
         var self = this;
         
-        api.setLoader(self.isTransitioning);
-        
-        self.beforeLoadView = function() {    
-            api.setStartable();
-            self.isTransitioning(true);            
+        self.beforeLoadView = function() {
+            self.isTransitioning(true);    
+            api.stopStack();
         }
-
+        
         self.loadView = function (view, routeParams) {
             self.beforeLoadView();
-            console.log('loading view');
-            self.viewParams(routeParams);
-                
+                        
+            routeParams.controller = {};
+            routeParams.controller.afterLoadView = self.afterLoadView;
+            
+            self.viewParams(routeParams);            
             self.viewName(view.name);
-            console.log('finish loading view');
-            //self.afterLoadView();
         }
 
-        self.afterLoadView = function() {
+        self.afterLoadView = function() {        
             api.launchStack();
         }
+        
         // props
         self.viewName = ko.observable(settings.defaultView.name);
         self.viewParams = ko.observable(settings.defaultView.params || {});
         self.isTransitioning = ko.observable(false);
+        api.setLoader(self.isTransitioning);
         // initialization
         ko.utils.arrayForEach(settings.views, function (vc) {
             if (vc.name && vc.componentConfig) {

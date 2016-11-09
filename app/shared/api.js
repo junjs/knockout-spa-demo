@@ -2,7 +2,7 @@ define(['knockout', 'axios'], function (ko, axios) {
     var api = {};
 
     api.loader = null;
-    api.startStack = false;
+    api.startStack = true;
     api.callStack = [];
 
     function $http(url) {
@@ -50,7 +50,11 @@ define(['knockout', 'axios'], function (ko, axios) {
 
         return {
             'get': function (args) {
-                return core.ajax('GET', url, args);
+                var promise =  core.ajax('GET', url, args);
+                if (!api.startStack) {
+                    api.stackPromise(promise);
+                }
+                return promise;
             }
         };
     };
@@ -61,19 +65,20 @@ define(['knockout', 'axios'], function (ko, axios) {
         this.loader = loader;
     }
 
-    api.setStartable = function() {
+    api.stopStack = function() {
         this.startStack = false;
     }
 
     api.launchStack = function() {
-        Promise.all(api.callStack).then(finishStack);
+        Promise.all(api.callStack).then(onFinishLoadingStack);
     }
 
-    function finishStack() {
+    function onFinishLoadingStack() {
         if (api.loader) {
             api.loader(false);
         }
-        api.startStack = false;
+        api.startStack = true;
+        api.callStack = [];
     };
 
     api.stackPromise = function(promise) {
