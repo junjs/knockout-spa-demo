@@ -2,15 +2,18 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<title>title</title>
+    <meta charset="UTF-8">
+    <title>Questions</title>
 
-	<script src="shared/require.config.js"></script>
-	<script data-main="shared/startup" src="/lib/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+    <script src="shared/require.config.js"></script>
+    <script data-main="shared/startup" src="lib/require.js"></script>
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,6 +24,9 @@
                 <a class="navbar-brand" href="/">KO Components</a>
                 <ul class="nav navbar-nav">
                     <li>
+                        <a href="#topics">Topics</a>
+                    </li>
+                    <li>
                         <a href="#">Home</a>
                     </li>
                     <li>
@@ -30,11 +36,13 @@
             </div>
         </div>
     </div>
-    <!--<div id="page1" class="container" style="padding-top:50px" data-bind="component: { name: route().page, params: route }"></div>-->
-
+    
+    <div class="container-fluid">
     <div class="view-container" data-bind="component: { 
         name: controller.viewName, 
         params: controller.viewParams }, css: {'is-transitioning': controller.isTransitioning}"></div>
+    </div>
+        
     <p data-bind="text: controller.isTransitioning"></p>
 </body>
 

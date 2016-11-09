@@ -1,0 +1,29 @@
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+<div class="row" style="margin-top: 20px">
+    <div class="col-sm-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>Creator</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: topics">
+                <tr>
+                    <td><a data-bind="attr: { href: '#topic', title: id }, text: id"></a>
+                    <td data-bind="text: description"></td>
+                    <td data-bind="text: creator"></td>
+                    <td data-bind="text: date"></td>
+                    <td data-bind="text: status"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

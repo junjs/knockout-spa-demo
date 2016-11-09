@@ -7,8 +7,7 @@
         "signals": "lib/signals",
         "hasher": "lib/hasher",
         "text": "lib/text",
-        "grapnel": "lib/grapnel",
-        "axios": 'lib/axios'
+        "grapnel": "lib/grapnel"
     },
     shim: {
     }

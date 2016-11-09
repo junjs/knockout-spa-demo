@@ -1,4 +1,4 @@
-define(['knockout', 'axios'], function (ko, axios) {
+define(['knockout'], function (ko) {
     var api = {};
 
     api.loader = null;
