@@ -1,12 +1,12 @@
-define(["knockout", 'repositories/listApi'], function (ko, listApi) {
+define(["knockout", 'repositories/questionsApi'], function (ko, api) {
     return function homeViewModel(params) {
         var self = this;
         self.title = ko.observable('Dipping your feet into KnockoutJS');
         self.guests = ko.observableArray([]);
         
         self.init = function() {
-            listApi.getList("hola").then(onGetList);
-            listApi.getList("hola").then(onGetList);
+            api.getTopics("hola").then(onGetList);
+            api.getTopics("hola").then(onGetList);
         }
 
         self.dispose = function() {
@@ -17,7 +17,7 @@ define(["knockout", 'repositories/listApi'], function (ko, listApi) {
             console.log('callback result' + result);
            
             result.forEach(function(question) {
-                 self.guests.push({ guestName: question.question });
+                 self.guests.push({ guestName: question.id });
             }, this);
         }
 

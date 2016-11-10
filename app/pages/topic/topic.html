@@ -1,8 +1,13 @@
 
 <div class="row" style="margin-top: 20px">
     <div class="col-sm-6">
-        <h2>Topic</h2>
+        <h1>Topic</h1>
+        <ul data-bind="with: topic">
+            <li data-bind="text: id"></li>
+        </ul>
+        <h2>Questions</h2>
         <questions params='questions: questions'></questions>
+
     </div>
     <div class="col-sm-6">
         <h2>Pricing</h2>

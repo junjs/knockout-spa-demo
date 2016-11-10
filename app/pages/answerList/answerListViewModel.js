@@ -1,8 +1,15 @@
 define(["knockout", 'repositories/questionsApi'], function (ko, api) {
-    return function questionViewModel(params) {
+    return function answerListViewModel(params) {
         var self = this;
-        self.answers = ko.observableArray();
+    
+        self.answers = params.answers;
         
+        self.init = function() {
+        }
+
+        self.dispose = function() {
+            console.log('disposed');
+        }
 
         return self;
     }

@@ -3,11 +3,10 @@ define(["knockout", 'repositories/questionsApi'], function (ko, api) {
         var self = this;
 
         self.questions = params.questions;
-        
+      
         self.init = function() {
-            
-        }
-
+        self.selectedQuestion = params.questions()[0];
+        
         self.dispose = function() {
             console.log('disposed');
         }
