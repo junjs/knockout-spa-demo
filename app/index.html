@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 
     <script src="shared/require.config.js"></script>
-    <script data-main="shared/startup" src="lib/require.js"></script>
+    <script data-main="shared/main" src="lib/require.js"></script>
 </head>
 
 <body>
@@ -42,8 +42,10 @@
         name: controller.viewName, 
         params: controller.viewParams }, css: {'is-transitioning': controller.isTransitioning}"></div>
     </div>
-        
-    <p data-bind="text: controller.isTransitioning"></p>
+    <div class="preloader" id="preloader" data-bind="css: {'preloader-visible': controller.isTransitioning}">
+        <img src="http://www.arabianbusiness.com/skins/ab.main/gfx/loading_spinner.gif" class="img-responsive center-block">
+        <p class="text-center loadText">Loading...</p>
+    </div>
 </body>
 
 </html>

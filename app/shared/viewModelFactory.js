@@ -5,7 +5,9 @@ define([], function () {
             if (vm.init) {
                 vm.init();
             }
-            params.controller.afterLoadView();
+            if (params.controller) {
+                params.controller.afterLoadView();
+            }
             return vm;
         }
     }

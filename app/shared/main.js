@@ -1,10 +1,10 @@
 ﻿require(['knockout', 'shared/ko-controller', 
-		'pages/questionList/questionListComponent', 'components/greeting', 'pages/topicList/topicListComponent', 'pages/topic/topicComponent'], 
+		'pages/questionList/questionListComponent', 'pages/answerList/answerListComponent', 'pages/topicList/topicListComponent', 'pages/topic/topicComponent'], 
 	function (ko, KnockoutController, 
-		questionListComponent, greetingComponent, topicListComponent, topicComponent) {
+		questionListComponent, answerListComponent, topicListComponent, topicComponent) {
 
-	ko.components.register('greeting', greetingComponent);
-	ko.components.register('questionList', questionListComponent);
+	ko.components.register('questions', questionListComponent);
+	ko.components.register('answers', answerListComponent);
 
 	var application = function () {
 		this.controller = new KnockoutController({

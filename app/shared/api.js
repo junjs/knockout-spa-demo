@@ -75,7 +75,10 @@ define(['knockout'], function (ko) {
 
     function onFinishLoadingStack() {
         if (api.loader) {
-            api.loader(false);
+            setTimeout(function() { 
+                api.loader(false); 
+            }, 200);
+            
         }
         api.startStack = true;
         api.callStack = [];

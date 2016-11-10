@@ -4,3 +4,26 @@ body {
 .view-container {
     margin: 20px;
 }
+.loadText{
+    font-family: Arial;
+    color:#000;
+	font-size: 30px;
+}
+.preloader{
+    background-color:#FFF;
+    height: 100%;
+	padding-top: 60px;
+	margin-left: -20px;
+	margin-top: -20px;
+	position: absolute;
+    left: 0;
+    top: 0;
+
+	width: 100%;
+	z-index: 2;
+    display: none;
+}
+
+.preloader-visible{
+    display: block;
+}
